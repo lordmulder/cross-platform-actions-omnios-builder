@@ -72,7 +72,7 @@ jobs:
         run: python3 -m http.server 8080 --directory output &
 
       - name: Test Image
-        uses: cross-platform-actions/action@omnios
+        uses: cross-platform-actions/action@master
         with:
           operating_system: omnios
           architecture: ${{ matrix.architecture.name }}
