@@ -7,8 +7,8 @@ export CARGO_HOME=/opt/rust/cargo
 
 # Add your additional provisioning here for custom VM images.
 pkg refresh
-pkg update --no-be
 pkg install build-essential git
+pkg update
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain 1.92.0
 
