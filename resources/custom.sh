@@ -9,7 +9,7 @@ export CARGO_HOME=/opt/rust/cargo
 pkg refresh
 pkg install build-essential git
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain 1.94.1
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain 1.95.0
 
 tee /opt/rust/cargo/env <<'EOF'
 #!/bin/sh
