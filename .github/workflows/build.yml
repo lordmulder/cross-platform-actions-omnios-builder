@@ -19,6 +19,7 @@ jobs:
         matrix:
           version:
             - r151056
+            - r151058
 
           architecture:
             - name: x86-64
