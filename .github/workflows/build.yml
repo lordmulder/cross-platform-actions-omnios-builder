@@ -18,7 +18,6 @@ jobs:
     strategy:
         matrix:
           version:
-            - r151056
             - r151058
 
           architecture:
@@ -55,6 +54,9 @@ jobs:
       #   uses: mxschmitt/action-tmate@v3
       #   with:
       #     limit-access-to-actor: true
+
+      - name: Free Disk Space
+        uses: jlumbroso/free-disk-space@main
 
       - name: Build Image
         run: |
@@ -95,7 +97,7 @@ jobs:
             uname -v | grep -q 'omnios'
             uname -v | grep -q '${{ matrix.version }}'
             [ "`uname -m`" = '${{ matrix.architecture.uname || matrix.architecture.name }}' ]
-            [ "`pwd`" = '/home/runner/work/omnios-builder/omnios-builder' ]
+            [ "`pwd`" = '/home/runner/work/cross-platform-actions-omnios-builder/cross-platform-actions-omnios-builder' ]
             [ "`hostname`" = 'runnervmg1sw1.local' ]
             cat host_to_guest.txt | grep -q 'host to guest'
             echo 'guest to host' > guest_to_host.txt
